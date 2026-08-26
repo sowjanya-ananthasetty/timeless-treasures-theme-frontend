@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Timeless Treasures</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="contact-page">
+    <div class="contact-copy">
+      <span class="eyebrow">CONTACT US</span>
+      <h1>Let's create something<br>special.</h1>
+      <p>Have a customization request or a question about an order? Send us a message.</p>
+
+      <div class="contact-details">
+        <div><span>☎</span> <strong>+91 7386780566</strong></div>
+        <div><span>✉</span> <strong>hello@timelesstreasures.in</strong></div>
+        <div><span>◷</span> <strong>10 am – 7 pm</strong> customer support</div>
+      </div>
+    </div>
+
+    <form id="custom-form" class="form-card">
+      <h2>Tell Us Your Idea</h2>
+      <label>Your Name<input name="name" required placeholder="Your Name"></label>
+      <label>Your Email<input name="email" type="email" placeholder="Your Email"></label>
+      <label>Phone Number<input name="mobile" required type="tel" placeholder="Phone Number"></label>
+      <label>Your Message<textarea name="message" required rows="6" placeholder="Your Message"></textarea></label>
+      <button class="btn btn-primary full" type="submit">Send Message</button>
+      <p class="form-note">Your message will open in WhatsApp with the details filled in.</p>
+    </form>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/products.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    initContactForm();
+  </script>
+</body>
+</html>

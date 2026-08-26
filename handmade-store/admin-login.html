@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Timeless Treasures</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-login-page">
+  <main class="login-card">
+    <img src="images/logo.png" alt="Timeless Treasures" class="admin-logo">
+    <p class="admin-kicker">TIMELESS TREASURES</p>
+    <h1>Admin Login</h1>
+    <p class="muted">Development workspace</p>
+    <form id="login-form">
+      <label>Email or username<input name="username" type="text" autocomplete="username" required></label>
+      <label>Password<input id="login-password" name="password" type="password" autocomplete="current-password" required></label>
+      <label class="check-row"><input id="show-password" type="checkbox"> Show password</label>
+      <p id="login-error" class="form-error" role="alert"></p>
+      <button class="admin-button primary" type="submit">Login</button>
+    </form>
+    <p class="dev-note">Development only. Frontend authentication is not secure for production.</p>
+  </main>
+  <script src="js/admin-login.js"></script>
+</body>
+</html>
