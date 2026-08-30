@@ -38,10 +38,12 @@ Timeless-Treasures/
 ├── checkout.html
 ├── track.html
 ├── contact.html
+├── admin.html
 ├── about.html
 │
 ├── css/
 │   └── style.css
+    └── admin.css
 │
 ├── js/
 │   ├── products.js
