@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category | Timeless Treasures</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="page category-page">
+    <div class="page-head left-page-head">
+      <div>
+        <span class="eyebrow">COLLECTION</span>
+        <h1 id="category-title">Products</h1>
+        <p id="category-count"></p>
+      </div>
+      <select id="category-sort" class="dark-select" aria-label="Sort products">
+        <option value="featured">Featured</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="name">Name: A-Z</option>
+      </select>
+    </div>
+
+    <div id="keychain-tabs" class="category-tabs" hidden>
+      <button type="button" data-keychain-tab="all">All</button>
+      <button type="button" data-keychain-tab="Photo Keychains">Photo Keychains</button>
+      <button type="button" data-keychain-tab="Name Keychains">Name Keychains</button>
+    </div>
+
+    <div class="category-layout">
+      <aside class="filter-panel">
+        <div class="filter-title">
+          <h2>Filters</h2>
+          <button onclick="clearCategoryFilters()">Clear All</button>
+        </div>
+
+        <div id="standard-price-filter" class="filter-group">
+          <h3>Price</h3>
+          <label><input type="checkbox" name="price" value="0-199"> Under ₹200</label>
+          <label><input type="checkbox" name="price" value="200-399"> ₹200 – ₹399</label>
+          <label><input type="checkbox" name="price" value="400-699"> ₹400 – ₹699</label>
+          <label><input type="checkbox" name="price" value="700-plus"> ₹700+</label>
+        </div>
+
+        <div id="frame-price-filter" class="filter-group" hidden>
+          <h3>Price</h3>
+          <label><input type="checkbox" name="frame-price" value="under-500"> Under ₹500</label>
+          <label><input type="checkbox" name="frame-price" value="500-999"> ₹500 – ₹999</label>
+          <label><input type="checkbox" name="frame-price" value="1000-1499"> ₹1000 – ₹1499</label>
+          <label><input type="checkbox" name="frame-price" value="1500-plus"> ₹1500+</label>
+        </div>
+
+        <div id="keychain-price-filter" class="filter-group" hidden>
+          <h3>Price</h3>
+          <label><input type="checkbox" name="keychain-price" value="under-200"> Under ₹200</label>
+          <label><input type="checkbox" name="keychain-price" value="200-399"> ₹200 – ₹399</label>
+          <label><input type="checkbox" name="keychain-price" value="400-599"> ₹400 – ₹599</label>
+          <label><input type="checkbox" name="keychain-price" value="600-plus"> ₹600+</label>
+        </div>
+
+        <div id="keychain-type-filter" class="filter-group" hidden>
+          <h3>Keychain Type</h3>
+          <label><input type="checkbox" name="keychain-type" value="Photo Keychains"> Photo Keychains</label>
+          <label><input type="checkbox" name="keychain-type" value="Name Keychains"> Name Keychains</label>
+        </div>
+
+        <div id="photo-capacity-filter" class="filter-group" hidden>
+          <h3>Photo Capacity</h3>
+          <label><input type="checkbox" name="photo-capacity" value="1"> 1 Photo</label>
+          <label><input type="checkbox" name="photo-capacity" value="2"> 2 Photos</label>
+          <label><input type="checkbox" name="photo-capacity" value="3"> 3 Photos</label>
+          <label><input type="checkbox" name="photo-capacity" value="4"> 4 Photos</label>
+          <label><input type="checkbox" name="photo-capacity" value="6"> 6 Photos</label>
+          <label><input type="checkbox" name="photo-capacity" value="8"> 8 Photos</label>
+          <label><input type="checkbox" name="photo-capacity" value="10"> 10 Photos</label>
+        </div>
+
+        <div id="bangle-color-filter" class="filter-group">
+          <h3>Color</h3>
+          <label><input type="checkbox" name="color" value="Gold"> Gold</label>
+          <label><input type="checkbox" name="color" value="Red"> Red</label>
+          <label><input type="checkbox" name="color" value="Pink"> Pink</label>
+          <label><input type="checkbox" name="color" value="Green"> Green</label>
+          <label><input type="checkbox" name="color" value="Purple"> Purple</label>
+          <label><input type="checkbox" name="color" value="Blue"> Blue</label>
+          <label data-non-bangle-color hidden><input type="checkbox" name="color" value="Black"> Black</label>
+          <label data-non-bangle-color hidden><input type="checkbox" name="color" value="White"> White</label>
+        </div>
+
+        <div id="frame-color-filter" class="filter-group" hidden>
+          <h3>Color</h3>
+          <label><input type="checkbox" name="frame-color" value="Gold"> Gold</label>
+          <label><input type="checkbox" name="frame-color" value="Brown"> Brown</label>
+          <label><input type="checkbox" name="frame-color" value="Black"> Black</label>
+          <label><input type="checkbox" name="frame-color" value="White"> White</label>
+          <label><input type="checkbox" name="frame-color" value="Red"> Red</label>
+        </div>
+
+        <div id="keychain-color-filter" class="filter-group" hidden>
+          <h3>Color</h3>
+          <label><input type="checkbox" name="keychain-color" value="Black"> Black</label>
+          <label><input type="checkbox" name="keychain-color" value="White"> White</label>
+          <label><input type="checkbox" name="keychain-color" value="Pink"> Pink</label>
+          <label><input type="checkbox" name="keychain-color" value="Blue"> Blue</label>
+          <label><input type="checkbox" name="keychain-color" value="Red"> Red</label>
+          <label><input type="checkbox" name="keychain-color" value="Gold"> Gold</label>
+        </div>
+
+        <div id="size-filter" class="filter-group" hidden>
+          <h3>Size</h3>
+          <label><input type="checkbox" name="size" value="2.10"> 2.10</label>
+          <label><input type="checkbox" name="size" value="2.12"> 2.12</label>
+          <label><input type="checkbox" name="size" value="2.14"> 2.14</label>
+          <label><input type="checkbox" name="size" value="2.2"> 2.2</label>
+          <label><input type="checkbox" name="size" value="2.3"> 2.3</label>
+          <label><input type="checkbox" name="size" value="2.4"> 2.4</label>
+          <label><input type="checkbox" name="size" value="2.5"> 2.5</label>
+          <label><input type="checkbox" name="size" value="2.6"> 2.6</label>
+          <label><input type="checkbox" name="size" value="2.8"> 2.8</label>
+        </div>
+
+        <div class="filter-group">
+          <h3>Availability</h3>
+          <label><input type="checkbox" name="availability" value="in-stock"> In Stock</label>
+          <label><input type="checkbox" name="availability" value="out-of-stock"> Out of Stock</label>
+        </div>
+      </aside>
+
+      <section>
+        <div id="category-products" class="product-grid"></div>
+      </section>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/917386780566?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Chat with us on WhatsApp" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.747.982 1.001-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.893-9.884 2.64 0 5.122 1.03 6.986 2.9a9.825 9.825 0 0 1 2.893 6.994c-.002 5.45-4.437 9.882-9.885 9.882m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.89c0 2.096.547 4.143 1.588 5.946L.1 24l6.304-1.654a11.88 11.88 0 0 0 5.646 1.438h.005c6.554 0 11.89-5.335 11.893-11.89a11.81 11.81 0 0 0-3.484-8.406"/>
+    </svg>
+  </a>
+  
+  <script src="js/products.js"></script>
+  <script src="js/product-store.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    renderCategoryPage();
+  </script>
+</body>
+</html>
